@@ -4,8 +4,11 @@ ready = function() {
   // initialize the calendar
 
   var calendar = $('#calendar');
+  
+   // special options
 
-  calendar.fullCalendar({
+   calendar.fullCalendar({
+    allDaySlot: false,
     theme: true,
     buttonIcons : {
       prev: 'left-single-arrow',
@@ -18,19 +21,10 @@ ready = function() {
     }
   });
 
-  calendar.fullCalendar('changeView', "agendaWeek");
+// make it weekly, with hours visible
 
-  // next week
+calendar.fullCalendar('changeView', "agendaWeek");
 
-  $('#nextWeek').on('click', function(){
-    calendar.fullCalendar('next');     
-  });
-
-  // last week
-
-  $('#lastWeek').on('click', function(){
-    calendar.fullCalendar('prev');     
-  });
 
 }
 
