@@ -2,6 +2,32 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
 body {
   overflow: hidden;
 }
+
+body > div.ui.top.sidebar.transparent.inverted.main.menu.active {
+  overflow: hidden;
+ }
+
+.fc-toolbar {
+  background-color: steelblue;
+  //margin-top:-0.4em;
+}
+
+// .sidebar {
+//   background-color: steelblue;
+//   .item {
+//     padding: 1em;
+//   }
+//   .container {
+//     display: inline-block;
+//     border: 1px solid black;
+//     height: 100%;
+//     width: auto;
+//   }
+// }
+
+
+
