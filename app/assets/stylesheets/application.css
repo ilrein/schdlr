@@ -14,7 +14,6 @@
  *= require_tree .
 
  *= require fullcalendar
-  *= require fullcalendar.print
-
+ *= require jquery-ui/ui-darkness
  *= require_self
  */

@@ -6,18 +6,19 @@ ready = function() {
   var calendar = $('#calendar');
 
   calendar.fullCalendar({
+    theme: true,
     buttonIcons : {
       prev: 'left-single-arrow',
       next: 'right-single-arrow'
     },
     header: {
-      left: 'prev',
+      left: 'prev, today, next',
       center: "title",
-      right: 'prev, next'
+      right: ''
     }
-    
   });
 
+  calendar.fullCalendar('changeView', "agendaWeek");
 
   // next week
 
