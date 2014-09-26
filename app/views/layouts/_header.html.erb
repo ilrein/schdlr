@@ -1,7 +1,35 @@
 <div class="ui top sidebar transparent inverted main menu">
-    <div class="container">
-      <a class="launch item">
-        Schdlr
-      </a>
+  <div class="container">
+    <div id='logo' class="launch item ui dropdown">
+      <%= link_to home_index_path do %>
+      <%= semantic_icon('calendar') %>
+      Schdlr
+      <% end %>
     </div>
+    <div class='item'>
+      Company
+    </div>
+    <div class='item'>
+      Schedules
+    </div>
+    <div class='item'>
+      Employees
+    </div>
+    <% if current_user %>
+    <div class='right item'>
+      <%= current_user.email %>
+    </div>
+    <%= link_to destroy_user_session_path, :method => :delete do %>
+    <div class='right item'>
+      Logout
+    </div>
+    <% end %>
+      <% else %>
+      <%= link_to new_user_session_path do  %>  
+      <div class='right item'>        
+        Login
+      </div>
+      <% end %>
+    <% end %>
   </div>
+</div>

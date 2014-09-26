@@ -2,6 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+html a {
+  text-decoration-line: none;
+  text-decoration: none;
+  -webkit-text-decoration:none;
+}
 
 body {
   overflow: hidden;
@@ -12,8 +17,13 @@ body > div.ui.top.sidebar.transparent.inverted.main.menu.active {
  }
 
 .fc-toolbar {
-  background-color: steelblue;
-  //margin-top:-0.4em;
+  background-color: #9A778F;
+  h2 {
+    color: white;
+    text-align: center;
+    padding: 0.5em;
+
+  }
 }
 
 // .sidebar {

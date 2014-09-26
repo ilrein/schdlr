@@ -6,6 +6,10 @@ ready = function() {
 
   $('.top').sidebar('show');
 
+  // initialize dropdown
+
+  $('#logo').dropdown();
+
   // initialize the calendar
 
   var calendar = $('#calendar');
