@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  resources :companies
+
   devise_for :users
   get 'home/index'
   root 'home#index', as: ''

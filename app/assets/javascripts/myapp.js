@@ -5,7 +5,7 @@ ready = function() {
   // initialize the header
 
   $('.top').sidebar('show');
-  
+    
 
   // initialize the calendar
 

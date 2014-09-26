@@ -16,13 +16,15 @@ body > div.ui.top.sidebar.transparent.inverted.main.menu.active {
   overflow: hidden;
  }
 
+#header {
+  
+}
+
 #footer {
    position:fixed;
    left:0px;
    bottom:0px;
-   height:30px;
    width:100%;
-   background:#999;
    z-index: 1000;
 }
 
