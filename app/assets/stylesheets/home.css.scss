@@ -16,6 +16,16 @@ body > div.ui.top.sidebar.transparent.inverted.main.menu.active {
   overflow: hidden;
  }
 
+#footer {
+   position:fixed;
+   left:0px;
+   bottom:0px;
+   height:30px;
+   width:100%;
+   background:#999;
+   z-index: 1000;
+}
+
 .fc-toolbar {
   background-color: #9A778F;
   h2 {

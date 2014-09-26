@@ -5,10 +5,7 @@ ready = function() {
   // initialize the header
 
   $('.top').sidebar('show');
-
-  // initialize dropdown
-
-  $('#logo').dropdown();
+  
 
   // initialize the calendar
 
