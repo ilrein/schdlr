@@ -28,6 +28,11 @@ body > div.ui.top.sidebar.transparent.inverted.main.menu.active {
    z-index: 1000;
 }
 
+#companytag:hover, #schedulestag:hover, 
+#employeestag:hover  {
+  background-color:#777777;
+}
+
 .fc-toolbar {
   background-color: #9A778F;
   h2 {

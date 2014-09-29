@@ -6,15 +6,21 @@
       Schdlr
       <% end %>
     </div>
-    <div class='item'>
+    <%= link_to companies_path do %>
+    <div id='companytag' class='launch item'>
       Company
     </div>
-    <div class='item'>
+    <% end %>
+    <%= link_to schedules_path do %>
+    <div id='schedulestag' class='launch item'>
       Schedules
     </div>
-    <div class='item'>
+    <% end %>
+    <%= link_to employees_path do %>
+    <div id='employeestag' class='launch item'>
       Employees
     </div>
+    <% end %>
     <% if current_user %>
     <div class='right item'>
       <%= current_user.email %>

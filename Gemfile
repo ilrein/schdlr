@@ -6,6 +6,7 @@ gem 'rails', '4.1.5'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', group: :development
 gem 'pg', group: :production
+
 gem 'quiet_assets'
 gem 'thin'
 gem 'jquery-ui-themes'
@@ -13,6 +14,8 @@ gem 'devise'
 gem 'autoprefixer-rails'
 gem 'semantic-ui-sass', '~> 0.16.1.0'
 gem 'awesome_print'
+gem 'nested_form'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets

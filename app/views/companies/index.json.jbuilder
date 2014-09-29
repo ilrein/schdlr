@@ -1,4 +1,4 @@
 json.array!(@companies) do |company|
-  json.extract! company, :id, :index, :show, :edit, :update, :create, :destroy
+  json.extract! company, :id, :name, :logo, :created_at, :updated_at
   json.url company_url(company, format: :json)
 end
