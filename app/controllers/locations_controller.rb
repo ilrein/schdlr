@@ -1,5 +1,9 @@
 class LocationsController < ApplicationController
+
   before_action :set_location, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
+  after_action :set_company_id, only: [:create]
+  
   def index
     @locations = Location.all
   end
@@ -43,6 +47,13 @@ class LocationsController < ApplicationController
 
   def location_params
     params.require(:location).permit(:name, :address, :latitude, :longitude)
+  end
+
+  def set_company_id
+    if current_user
+      @company = current_user.company
+      @location.update_attributes(:company_id, @company.id)
+    end
   end
 
 end
