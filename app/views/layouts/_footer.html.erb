@@ -1,5 +1,10 @@
-<div id='footer'>
-  <div class='ui segment inverted purple'>
-    <p>footer</p>
+<div id='footer' class='ui segment'>
+  <div class='ui mini button'>
+  <%= semantic_icon(:cloud) %>
   </div>
+    <% @company.employees.each do |employee| %>
+    <div>
+      <%= employee.email %>
+    </div>
+    <% end %>
 </div>

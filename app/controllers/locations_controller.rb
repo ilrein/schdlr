@@ -52,7 +52,7 @@ class LocationsController < ApplicationController
   def set_company_id
     if current_user
       @company = current_user.company
-      @location.update_attributes(:company_id, @company.id)
+      @location.update_attribute(:company_id, @company.id)
     end
   end
 

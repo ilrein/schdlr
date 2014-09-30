@@ -5,8 +5,7 @@ ready = function() {
   // initialize the header
 
   $('.top').sidebar('show');
-    
-
+  
   // initialize the calendar
 
   var calendar = $('#calendar');
@@ -24,7 +23,7 @@ ready = function() {
       left: 'prev, today, next',
       center: "title",
       right: ''
-    }
+    },
   });
 
 // make it weekly, with hours visible

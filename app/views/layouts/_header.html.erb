@@ -1,6 +1,6 @@
 <div class="fixed ui top sidebar transparent inverted main menu">
   <div class="container">
-    <div id='logo' class="launch item ui dropdown">
+    <div id='logo' class="launch item">
       <%= link_to home_index_path do %>
       <%= semantic_icon('calendar') %>
       Schdlr
@@ -30,12 +30,12 @@
       Logout
     </div>
     <% end %>
-      <% else %>
-      <%= link_to new_user_session_path do  %>  
-      <div class='right item'>        
-        Login
-      </div>
-      <% end %>
+    <% else %>
+    <%= link_to new_user_session_path do  %>  
+    <div class='right item'>        
+      Login
+    </div>
+    <% end %>
     <% end %>
   </div>
 </div>

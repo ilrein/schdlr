@@ -15,7 +15,7 @@ gem 'autoprefixer-rails'
 gem 'semantic-ui-sass', '~> 0.16.1.0'
 gem 'awesome_print'
 gem 'nested_form'
-
+gem 'pry'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets

@@ -1,9 +1,13 @@
 <h1>Locations#index</h1>
 
 <% @locations.each do |location| %>
-  <div class='ui segment'>
+<div class='ui segment'>
   <%= location.name %><br>
   <%= location.address %><br>
-  </div>
+  <%= link_to 'Show', location %>
+  <%= link_to 'Edit', edit_location_path(location) %>
+  <%= link_to 'Destroy', location, method: :delete, data: { confirm: 'Are you sure?' } %>
+
+</div>
 <% end %>
 <p>Add a new location: <%= link_to "New Location", new_location_path %></p>
