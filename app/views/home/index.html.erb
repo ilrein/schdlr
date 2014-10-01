@@ -1,2 +1,13 @@
 <div id='calendar'/>
-<%= render 'layouts/footer', object: @company %>
+<div id='drawingtoolbar'>
+  <div id='drawmenu' class="ui menu">
+    <div class='item'>
+    <%= link_to '#' do %>
+      <div id="drawshift" class='ui mini button'>
+        <%= semantic_icon(:pencil) %>
+        <div id='drawshifttext'> Draw a Shift</p>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>

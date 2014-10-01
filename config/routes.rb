@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
 
+  get 'events/show'
+
   resources :companies
   resources :schedules
   resources :locations
