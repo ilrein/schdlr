@@ -4,6 +4,10 @@ ready = function() {
 
   // initialize the header
 
+  $('.ui.sidebar').sidebar({
+    exclusive: false
+  });
+
   $('.top').sidebar('show');
   
   // initialize the calendar
@@ -23,9 +27,6 @@ ready = function() {
       left: 'prev, today, next',
       center: "title",
       right: ''
-    },
-    dayRender: function(date, cell) {
-      cell.css('background-color', 'red');
     }
   });
 
@@ -35,8 +36,13 @@ calendar.fullCalendar('changeView', "agendaWeek");
 
 // creating individual cells
 
-$('tbody td .ui-widget-content').prepend("<div class='slot'></div>");
-
+$('tbody td .ui-widget-content').prepend("<div class='slot'></div>")
+.append("<div class='slot'></div>")
+.append("<div class='slot'></div>")
+.append("<div class='slot'></div>")
+.append("<div class='slot'></div>")
+.append("<div class='slot'></div>")
+.append("<div class='slot'></div>");
 
 var rows = [];
 
