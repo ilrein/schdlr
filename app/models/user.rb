@@ -7,4 +7,8 @@ class User < ActiveRecord::Base
   belongs_to :company
   has_many :schedules, through: :shifts
   has_many :shifts
+  
+  def last_weeks_shifts
+    Shift.where(:user_id => self.id, :schedule_id => Schedule.last_week)
+  end
 end

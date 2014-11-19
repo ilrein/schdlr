@@ -1,13 +1,9 @@
 require 'rails_helper'
 
-
-    DatabaseCleaner.strategy = :truncation
-
+DatabaseCleaner.strategy = :truncation
+DatabaseCleaner.clean
+      
 RSpec.describe User, :type => :model do
-  
-  before :each do 
-    @user = build(:user)
-  end
 
   describe "(1) Has Associations and Test Data" do
     context "(a) has a valid factory" do 
@@ -23,19 +19,24 @@ RSpec.describe User, :type => :model do
     end
   end
 
-  describe "(2) JSON API Methods" do
+  describe "(2) JSON API Methods for current_user" do
+
+    before(:each) do  
+      DatabaseCleaner.clean
+      @user = FactoryGirl.create(:user)
+      @schedule = FactoryGirl.create(:schedule)
+      @shift = FactoryGirl.create(:shift, user_id: @user.id, schedule_id: @schedule.id)
+    end
 
     context ".shifts returns all shifts" do
-      DatabaseCleaner.clean
-      user = FactoryGirl.create(:user)
-      shift = FactoryGirl.create(:shift, user_id: user.id, schedule_id: 1)
-
-      #it { expect(shift.user_id).to eq(user.id) }
-      it { expect(user.shifts).to eq(Shift.where(:user_id => user.id)) }
+      it { expect(@user.shifts).to eq(Shift.where(:user_id => @user.id)) }
     end
     
     context ".last_weeks_shifts returns all shifts for LAST week" do 
-      it { expect(@user.last_weeks_shifts).to equal [] }
+      it { expect(@user.last_weeks_shifts).to eq(Shift.where(
+        :user_id => @user.id,
+        :schedule_id => Schedule.last_week
+        )) }
     end
     
     context ".this_weeks_shifts returns all shifts for THIS week" do 
