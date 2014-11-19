@@ -1,5 +1,8 @@
 require 'rails_helper'
 
+
+    DatabaseCleaner.strategy = :truncation
+
 RSpec.describe User, :type => :model do
   
   before :each do 
@@ -21,8 +24,14 @@ RSpec.describe User, :type => :model do
   end
 
   describe "(2) JSON API Methods" do
-    context ".shifts returns all shifts" do 
-      it { expect(@user.shifts).to equal [] }
+
+    context ".shifts returns all shifts" do
+      DatabaseCleaner.clean
+      user = FactoryGirl.create(:user)
+      shift = FactoryGirl.create(:shift, user_id: user.id, schedule_id: 1)
+
+      #it { expect(shift.user_id).to eq(user.id) }
+      it { expect(user.shifts).to eq(Shift.where(:user_id => user.id)) }
     end
     
     context ".last_weeks_shifts returns all shifts for LAST week" do 
