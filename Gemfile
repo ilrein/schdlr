@@ -9,13 +9,15 @@ gem 'pg', group: :production
 
 gem 'quiet_assets'
 gem 'thin'
-gem 'jquery-ui-themes'
 gem 'devise'
 gem 'autoprefixer-rails'
 gem 'semantic-ui-sass', '~> 0.16.1.0'
-gem 'awesome_print'
-gem 'nested_form'
-gem 'pry'
+gem 'pry', group: [:development, :test]
+gem 'awesome_print', group: [:development, :test]
+gem 'rspec-rails', group: [:development, :test]
+gem 'launchy', group: [:development, :test]
+gem 'factory_girl_rails', group: [:development, :test]
+gem 'capybara', group: [:development, :test]
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets

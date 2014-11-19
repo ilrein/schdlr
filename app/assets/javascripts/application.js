@@ -14,6 +14,5 @@
 //= require jquery_ujs
 //= require semantic-ui
 //= require moment
-//= require fullcalendar.min
 //= require turbolinks
 //= require_tree .
