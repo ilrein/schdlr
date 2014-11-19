@@ -8,7 +8,4 @@ class User < ActiveRecord::Base
   has_many :schedules, through: :shifts
   has_many :shifts
   #scope :shifts, -> { Shift.joins(:users).where(:user_id => current.user_id) }
-  def self.shifts
-
-  end
 end
