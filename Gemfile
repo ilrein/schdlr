@@ -13,6 +13,7 @@ gem 'devise'
 gem 'autoprefixer-rails'
 gem 'semantic-ui-sass', '~> 0.16.1.0'
 gem 'pry', group: [:development, :test]
+gem 'guard-rspec', group: [:development, :test]
 gem 'awesome_print', group: [:development, :test]
 gem 'rspec-rails', group: [:development, :test]
 gem 'launchy', group: [:development, :test]
