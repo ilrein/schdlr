@@ -11,4 +11,7 @@ class User < ActiveRecord::Base
   def last_weeks_shifts
     Shift.where(:user_id => self.id, :schedule_id => Schedule.last_week)
   end
+  def this_weeks_shifts
+    Shift.where(:user_id => self.id, :schedule_id => Schedule.this_week)
+  end
 end

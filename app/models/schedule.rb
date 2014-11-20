@@ -6,5 +6,7 @@ class Schedule < ActiveRecord::Base
   def self.last_week
     Schedule.where(:week_num => Date.today.cweek - 1)
   end
-
+  def self.this_week
+    Schedule.where(:week_num => Date.today.cweek)
+  end
 end

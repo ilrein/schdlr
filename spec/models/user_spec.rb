@@ -40,15 +40,15 @@ RSpec.describe User, :type => :model do
     end
     
     describe ".this_weeks_shifts returns all shifts for THIS week" do 
-      it { expect(@user.this_weeks_shifts).to equal [] }
+      it { expect(user.this_weeks_shifts).to eq(shift.all_this_week) }
     end
     
-    describe ".next_weeks_shifts returns all shifts for NEXT week" do 
-      it { expect(@user.next_weeks_shifts).to equal [] }
-    end
+    # describe ".next_weeks_shifts returns all shifts for NEXT week" do 
+    #   it { expect(@user.next_weeks_shifts).to equal [] }
+    # end
     
-    describe ".shift_today? returns true if it has a shift today" do 
-      it { expect(@user.shift_today?).to equal true or false }
-    end
+    # describe ".shift_today? returns true if it has a shift today" do 
+    #   it { expect(@user.shift_today?).to equal true or false }
+    # end
   end
 end
