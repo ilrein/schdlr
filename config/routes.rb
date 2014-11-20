@@ -1,5 +1,17 @@
 Rails.application.routes.draw do
 
+  get 'shifts/index'
+
+  get 'shifts/new'
+
+  get 'shifts/create'
+
+  get 'shifts/edit'
+
+  get 'shifts/update'
+
+  get 'shifts/destroy'
+
   get 'companies/index'
 
   get 'companies/new'
