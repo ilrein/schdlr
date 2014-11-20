@@ -19,35 +19,35 @@ RSpec.describe User, :type => :model do
     end
   end
 
-  describe "(2) JSON API Methods for current_user" do
+  context "(2) JSON API Methods for current_user" do
+
+    let(:user) { FactoryGirl.create(:user) }
+    let(:schedule) { FactoryGirl.create(:schedule) }
+    let(:shift) { FactoryGirl.create(:shift, user_id: user.id, schedule_id: schedule.id) }
+    let(:last_weeks_schedule) { FactoryGirl.create(:schedule, week_num: Date.today.cweek - 1).id }
+    let(:last_weeks_shift) { FactoryGirl.create(:shift, user_id: user.id, schedule_id: last_weeks_schedule) }
 
     before(:each) do  
       DatabaseCleaner.clean
-      @user = FactoryGirl.create(:user)
-      @schedule = FactoryGirl.create(:schedule)
-      @shift = FactoryGirl.create(:shift, user_id: @user.id, schedule_id: @schedule.id)
     end
 
-    context ".shifts returns all shifts" do
-      it { expect(@user.shifts).to eq(Shift.where(:user_id => @user.id)) }
+    describe ".shifts returns all shifts" do
+      it { expect(user.shifts).to include shift }
     end
     
-    context ".last_weeks_shifts returns all shifts for LAST week" do 
-      it { expect(@user.last_weeks_shifts).to eq(Shift.where(
-        :user_id => @user.id,
-        :schedule_id => Schedule.last_week
-        )) }
+    describe ".last_weeks_shifts returns all shifts for LAST week" do 
+      it { expect(user.last_weeks_shifts).to include last_weeks_shift }
     end
     
-    context ".this_weeks_shifts returns all shifts for THIS week" do 
+    describe ".this_weeks_shifts returns all shifts for THIS week" do 
       it { expect(@user.this_weeks_shifts).to equal [] }
     end
     
-    context ".next_weeks_shifts returns all shifts for NEXT week" do 
+    describe ".next_weeks_shifts returns all shifts for NEXT week" do 
       it { expect(@user.next_weeks_shifts).to equal [] }
     end
     
-    context ".shift_today? returns true if it has a shift today" do 
+    describe ".shift_today? returns true if it has a shift today" do 
       it { expect(@user.shift_today?).to equal true or false }
     end
   end

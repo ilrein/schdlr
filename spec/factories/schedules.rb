@@ -2,5 +2,7 @@
 
 FactoryGirl.define do
   factory :schedule do
+    company_id 1
+    week_num { Date.today.cweek }
   end
 end
