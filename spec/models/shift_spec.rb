@@ -1,10 +1,19 @@
 require 'rails_helper'
 
+DatabaseCleaner.strategy = :truncation
+DatabaseCleaner.clean
+
 RSpec.describe Shift, :type => :model do
-  
-  before :each do 
-    @shift = build(:shift)
-  end
+
+    let(:user) { FactoryGirl.create(:user) }
+    let(:schedule) { FactoryGirl.create(:schedule) }
+    let(:shift) { FactoryGirl.create(:shift, user_id: user.id, schedule_id: schedule.id) }
+    let(:last_weeks_schedule) { FactoryGirl.create(:schedule, week_num: Date.today.cweek - 1).id }
+    let(:last_weeks_shift) { FactoryGirl.create(:shift, user_id: user.id, schedule_id: last_weeks_schedule) }
+
+    before(:each) do  
+      DatabaseCleaner.clean
+    end
 
   describe "(1) Has Associations and Test Data" do
     context "(a) has a valid factory" do 
@@ -17,6 +26,12 @@ RSpec.describe Shift, :type => :model do
 
     context "(c) references a user" do 
       it { expect(Shift.reflect_on_association(:user).macro).to eq(:belongs_to) }
+    end
+  end
+
+  context "(2) JSON API Methods" do
+    describe "(b) .week_of returns cweek" do 
+      it { expect(shift.week_of).to eq Date.today.cweek }
     end
   end
 
