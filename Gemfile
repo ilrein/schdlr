@@ -6,7 +6,8 @@ gem 'rails', '4.1.5'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', group: :development
 gem 'pg', group: :production
-
+gem 'ember-rails'
+gem 'ember-source'
 gem 'quiet_assets'
 gem 'thin'
 gem 'devise'
