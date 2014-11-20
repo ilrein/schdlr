@@ -30,8 +30,13 @@ RSpec.describe Shift, :type => :model do
   end
 
   context "(2) JSON API Methods" do
-    describe "(b) .week_of returns cweek" do 
-      it { expect(shift.week_of).to eq Date.today.cweek }
+    describe "(b) .week_of returns current week" do 
+      it "returns this current week" do 
+       expect(shift.week_of).to eq Date.today.cweek 
+     end
+      it "returns last current week" do 
+        expect(last_weeks_shift.week_of).to eq (Date.today.cweek - 1)
+      end
     end
   end
 
