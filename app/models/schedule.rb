@@ -9,4 +9,7 @@ class Schedule < ActiveRecord::Base
   def self.this_week
     Schedule.where(:week_num => Date.today.cweek)
   end
+  def self.next_week
+    Schedule.where(:week_num => Date.today.cweek + 1)
+  end
 end

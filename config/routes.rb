@@ -1,5 +1,17 @@
 Rails.application.routes.draw do
 
+  get 'companies/index'
+
+  get 'companies/new'
+
+  get 'companies/create'
+
+  get 'companies/edit'
+
+  get 'companies/update'
+
+  get 'companies/destroy'
+
   get 'events/show'
 
   resources :companies

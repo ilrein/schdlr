@@ -2,7 +2,7 @@ require 'rails_helper'
 
 DatabaseCleaner.strategy = :truncation
 DatabaseCleaner.clean
-      
+
 RSpec.describe User, :type => :model do
 
   describe "(1) Has Associations and Test Data" do
@@ -36,16 +36,18 @@ RSpec.describe User, :type => :model do
     end
     
     describe ".last_weeks_shifts returns all shifts for LAST week" do 
-      it { expect(user.last_weeks_shifts).to include last_weeks_shift }
+      it { expect(user.last_weeks_shifts).to include last_weeks_shift and not include shift }
     end
     
     describe ".this_weeks_shifts returns all shifts for THIS week" do 
-      it { expect(user.this_weeks_shifts).to eq(shift.all_this_week) }
+      it { expect(user.this_weeks_shifts).to match_array(shift.all_this_week) }
     end
     
-    # describe ".next_weeks_shifts returns all shifts for NEXT week" do 
-    #   it { expect(@user.next_weeks_shifts).to equal [] }
-    # end
+    describe ".next_weeks_shifts returns all shifts for NEXT week" do
+      context "if none are booked" do 
+        it { expect(user.next_weeks_shifts).to_not be_nil }
+      end
+    end
     
     # describe ".shift_today? returns true if it has a shift today" do 
     #   it { expect(@user.shift_today?).to equal true or false }
