@@ -7,7 +7,6 @@ gem 'rails', '4.1.5'
 gem 'sqlite3', group: :development
 gem 'pg', group: :production
 gem 'quiet_assets'
-gem 'knockoutjs-rails'
 gem 'thin'
 gem 'devise'
 gem 'autoprefixer-rails'
