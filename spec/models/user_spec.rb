@@ -40,12 +40,12 @@ RSpec.describe User, :type => :model do
     end
     
     describe ".this_weeks_shifts returns all shifts for THIS week" do 
-      it { expect(user.this_weeks_shifts).to match_array(shift.all_this_week) }
+      it { expect(shift.all_this_week).to contain_exactly(user.this_weeks_shifts.first) }
     end
     
     describe ".next_weeks_shifts returns all shifts for NEXT week" do
       context "if none are booked" do 
-        it { expect(user.next_weeks_shifts).to_not be_nil }
+        it { expect(user.next_weeks_shifts.first).to be_nil }
       end
     end
     
