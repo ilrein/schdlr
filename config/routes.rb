@@ -1,35 +1,12 @@
 Rails.application.routes.draw do
 
-  get 'shifts/index'
-
-  get 'shifts/new'
-
-  get 'shifts/create'
-
-  get 'shifts/edit'
-
-  get 'shifts/update'
-
-  get 'shifts/destroy'
-
-  get 'companies/index'
-
-  get 'companies/new'
-
-  get 'companies/create'
-
-  get 'companies/edit'
-
-  get 'companies/update'
-
-  get 'companies/destroy'
-
-  get 'events/show'
-
+  resources :shifts
   resources :companies
   resources :schedules
   resources :locations
   resources :employees
+
+  get 'learn_more', to: "home#learn_more", as: "learn_more"
 
   devise_for :users
   get 'home/index'

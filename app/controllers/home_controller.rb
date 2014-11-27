@@ -3,4 +3,9 @@ class HomeController < ApplicationController
   def index
     @company = current_user.company
   end
+  def learn_more
+    # respond_to do |format|
+    #   format.js
+    # end
+  end
 end
