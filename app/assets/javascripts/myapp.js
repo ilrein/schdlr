@@ -10,8 +10,10 @@ ready = function() {
 
   $('.top').sidebar('show');
   
-  // create view models for Knockout
+  //$("#welcome_box").draggable();
 
+  $("#welcome_txt").textillate();
+  
 };
 
 $(document).ready(ready);

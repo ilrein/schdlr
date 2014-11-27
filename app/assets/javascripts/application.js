@@ -12,6 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.ui.all
+//= require_tree ../../../vendor/assets/javascripts/.
 //= require semantic-ui
 //= require moment
 //= require turbolinks
