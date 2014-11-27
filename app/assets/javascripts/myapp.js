@@ -12,8 +12,14 @@ ready = function() {
   
   //$("#welcome_box").draggable();
 
-  $("#welcome_txt").textillate();
-  
+  function animateTitle(){
+    $("#welcome_txt").textillate({ 
+      in: { 
+        effect: 'tada'
+      }
+    });  
+  };
+
 };
 
 $(document).ready(ready);

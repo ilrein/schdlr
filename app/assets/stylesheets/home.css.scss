@@ -12,11 +12,15 @@ body {
   overflow: hidden;
 }
 
-#welcome_box {
+#welcome_box, #login_box {
   font-size: 3em;
   width: 75%;
   margin-right: auto;
   margin-left: auto;
   text-align: center;
   padding: 0.5em;
+}
+
+#login_box {
+  font-size: 1em;
 }
