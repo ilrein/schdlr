@@ -6,8 +6,6 @@ Rails.application.routes.draw do
   resources :locations
   resources :employees
 
-  get 'learn_more', to: "home#learn_more", as: "learn_more"
-
   devise_for :users
   get 'home/index'
   root 'home#index', as: ''

@@ -2,15 +2,9 @@ var ready;
 
 ready = function() {
 
-  // initialize the header
-
-  $('.ui.sidebar').sidebar({
-    exclusive: false
-  });
-
-  $('.top').sidebar('show');
-  
   //$("#welcome_box").draggable();
+
+  hideLearningBox();
 
   function animLearnMoreBtn () {
     $("#learn_more_btn").textillate({
@@ -22,38 +16,43 @@ ready = function() {
   };
 
   function hideWelcomeBox() {
-    $("#welcome_box").fadeOut();
+    TweenMax.to($('#welcome_box'), 4.5,
+     {css:{alpha:0,display:''}}, {css:{alpha:1}});
   };
 
   function hideLoginBox() {
-    $("#login_box").fadeOut();
+    TweenMax.to($('#login_box'), 4.5, 
+      {css:{alpha:0,display:''}}, {css:{alpha:1}});
   };
 
-  function showLearningPage() {
-    $.ajax({
-      url: "learn_more"
-    }).done(function(data){
-      alert(data);
-    });
-  };
+  function hideLearningBox () {
+   TweenMax.to($('#learn_more_box'), 4.5, 
+    {css:{alpha:0,display:''}}, {css:{alpha:1}});
+ };
 
-  $("#welcome_txt").textillate({ 
-    autoStart: true,
-    initialDelay: 2.5,
-    loop: false,
-    in: { 
-      delay: 5,
-      effect: 'fadeInLeftBig',
-      callback: animLearnMoreBtn()
-    }
-  }); 
+ function showLearningBox () {
+   TweenMax.to($('#learn_more_box'), 4.5, 
+    {css:{alpha:1,display:''}}, {css:{alpha:1}});
+  
+   // TweenLite.to($("#learn_more_box"), 
+   //  2, {
+   //    y:100, ease:Cubic.easeOut
+   //  });
+ };
 
-  $('#learn_more_btn').on("click", function(){
-    hideWelcomeBox();
-    hideLoginBox();
-    showLearningPage();
+ $("#welcome_txt").textillate({ 
+  autoStart: true,
+  initialDelay: 2.5,
+  loop: false,
+  in: { 
+    delay: 5,
+    effect: 'fadeInLeftBig',
+    callback: animLearnMoreBtn()
+  }
+}); 
 
-  });
+ $('#learn_more_btn').on("click", function(){
+});
 
 
 };

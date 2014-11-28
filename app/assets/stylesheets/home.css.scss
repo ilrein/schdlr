@@ -9,10 +9,11 @@ html a {
 }
 
 body {
-  overflow: hidden;
+  background-color: black;
+  overflow-x: hidden;
 }
 
-#welcome_box, #login_box {
+#welcome_box, #login_box, #learn_more_box {
   font-size: 3em;
   width: 75%;
   margin-right: auto;
@@ -23,4 +24,12 @@ body {
 
 #login_box {
   font-size: 1em;
+}
+
+#learn_more_box {
+  position: relative;
+}
+
+#learn_more_txt {
+  font-size: 0.5em;
 }
