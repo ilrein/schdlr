@@ -1,0 +1,21 @@
+<div class='ui message' id="login_box">
+  <p id="login_txt">
+    Do you have an account already?
+  </p>
+  <%= form_for(:user, :html => { class: "ui form"}, :url => session_path(:user)) do |f| %>
+  <div class='two fields'>
+    <div class='field ui left icon input'>
+      <%= semantic_icon(:user) %>
+      <%= f.text_field :email %>
+    </div>
+    <div class='field ui left icon input'>
+      <%= semantic_icon(:key) %>
+      <%= f.password_field :password %>
+    </div>
+  </div>
+  <%= f.check_box :remember_me %>
+  <%= f.label :remember_me %>
+  <%= f.submit 'Sign in' %>
+  <%= link_to "Forgot your password?", new_password_path(:user) %>
+  <% end %> 
+</div>

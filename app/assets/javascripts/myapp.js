@@ -33,14 +33,14 @@ ready = function() {
  function showLearningBox () {
    TweenMax.to($('#learn_more_box'), 4.5, 
     {css:{alpha:1,display:''}}, {css:{alpha:1}});
-  
+
    // TweenLite.to($("#learn_more_box"), 
    //  2, {
    //    y:100, ease:Cubic.easeOut
    //  });
- };
+};
 
- $("#welcome_txt").textillate({ 
+$("#welcome_txt").textillate({ 
   autoStart: true,
   initialDelay: 2.5,
   loop: false,
@@ -51,7 +51,8 @@ ready = function() {
   }
 }); 
 
- $('#learn_more_btn').on("click", function(){
+$('#learn_more_btn').on("click", function(){
+
 });
 
 
