@@ -7,14 +7,13 @@ describe "the signin process", :type => :feature do
   before :each do
   end
 
-  it "signs me in" do
-    visit ("/")#login_box > form > div.two.fields
+  it "signs me in and redirects to the prep page" do
+    visit ("/")
     within("#login_box") do
-      fill_in 'user_email', :with => 'ilia.reingold@gmail.com'
-      fill_in 'user_password', :with => 'control3'
+      fill_in 'user_email', with: user.email
+      fill_in 'user_password', with: user.password
     end
     click_button 'Sign in'
-    #binding.pry
-    expect(page.current_path).to have_content 'erb'
+    expect(page.current_path).to eq home_preparation_path
   end
 end
